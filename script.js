@@ -63,3 +63,29 @@ const shortDate = (dt) => {
           })
       })
   }
+  let history = JSON.parse(localStorage.getItem('history')) || []
+
+document.getElementById('weatherSearch').addEventListener('click', event => {
+  event.preventDefault()
+  Display(document.getElementById('citySearch').value)
+})
+// clear history
+document.getElementById('clearHistory').addEventListener('click', event => {
+  event.preventDefault()
+  const clrHst = confirm('Clear history?')
+  if (clrHst) {
+    localStorage.removeItem('history')
+    history = []
+  }
+})
+
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('list-group-item')) {
+    const historyValue = event.target.getAttribute('data-val')
+    Display(historyValue)
+  }
+})
+
+if (history.length > 0) {
+  Display(history[history.length - 1].resultName)
+}
