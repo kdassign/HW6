@@ -64,19 +64,10 @@ const shortDate = (dt) => {
       })
   }
   let history = JSON.parse(localStorage.getItem('history')) || []
-
+// saves search history
 document.getElementById('weatherSearch').addEventListener('click', event => {
   event.preventDefault()
   Display(document.getElementById('citySearch').value)
-})
-// clear history
-document.getElementById('clearHistory').addEventListener('click', event => {
-  event.preventDefault()
-  const clrHst = confirm('Clear history?')
-  if (clrHst) {
-    localStorage.removeItem('history')
-    history = []
-  }
 })
 
 document.addEventListener('click', event => {
