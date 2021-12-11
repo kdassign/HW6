@@ -5,6 +5,9 @@ Use the [OpenWeather One Call API](https://openweathermap.org/api/one-call-api) 
 
 ## Technologies Used 
 -API
+-Javascript
+-CSS
+-HTML
 
 ## Screenshot 
 ![](https://i.ibb.co/j314KWp/weatherdashboardscreen.png)
